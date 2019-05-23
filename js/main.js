@@ -154,31 +154,55 @@ fillRestaurantsHTML = (restaurants = self.restaurants) => {
 
 /**
  * Create restaurant HTML.
+ * Uses template literal to create each restaurant item
+ * Returns the list
  */
+// createRestaurantHTML = (restaurant) => {
+//   const li = document.createElement('li');
+
+//   const image = document.createElement('img');
+//   image.className = 'restaurant-img';
+//   image.src = DBHelper.imageUrlForRestaurant(restaurant);
+//   li.append(image);
+
+//   const name = document.createElement('h1');
+//   name.innerHTML = restaurant.name;
+//   li.append(name);
+
+//   const neighborhood = document.createElement('p');
+//   neighborhood.innerHTML = restaurant.neighborhood;
+//   li.append(neighborhood);
+
+//   const address = document.createElement('p');
+//   address.innerHTML = restaurant.address;
+//   li.append(address);
+
+//   const more = document.createElement('a');
+//   more.innerHTML = 'View Details';
+//   more.href = DBHelper.urlForRestaurant(restaurant);
+//   li.append(more)
+
+//   return li
+// }
+
 createRestaurantHTML = (restaurant) => {
   const li = document.createElement('li');
 
-  const image = document.createElement('img');
-  image.className = 'restaurant-img';
-  image.src = DBHelper.imageUrlForRestaurant(restaurant);
-  li.append(image);
+  // Retrieves image depending on size of device
+  // Then inserts rest of restaurant information
+  li.innerHTML =
+    `<picture>
+  <source media="(max-width: 768px)"
+  srcset="${DBHelper.imageSmallUrlForRestaurant(restaurant)}">
+  <source media="(min-width: 769px)"
+  srcset="${DBHelper.imageUrlForRestaurant(restaurant)}">
+  <img class='restaurant-img' src="${DBHelper.imageUrlForRestaurant(restaurant)}">
+  </picture>
 
-  const name = document.createElement('h1');
-  name.innerHTML = restaurant.name;
-  li.append(name);
-
-  const neighborhood = document.createElement('p');
-  neighborhood.innerHTML = restaurant.neighborhood;
-  li.append(neighborhood);
-
-  const address = document.createElement('p');
-  address.innerHTML = restaurant.address;
-  li.append(address);
-
-  const more = document.createElement('a');
-  more.innerHTML = 'View Details';
-  more.href = DBHelper.urlForRestaurant(restaurant);
-  li.append(more)
+  <h1>${restaurant.name}</h1>
+  <p>${restaurant.neighborhood}</p>
+  <p>${restaurant.address}</p>
+  <a href="${DBHelper.urlForRestaurant(restaurant)}">View Details</a>`
 
   return li
 }
