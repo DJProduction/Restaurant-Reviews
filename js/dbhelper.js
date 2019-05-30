@@ -159,6 +159,7 @@ class DBHelper {
   static imageSmallUrlForRestaurant(restaurant) {
     let resUrlArray = restaurant.photograph.split(`.`);
     return (`/img/${resUrlArray[0]}-small.${resUrlArray[1]}`);
+
   }
 
   /**
