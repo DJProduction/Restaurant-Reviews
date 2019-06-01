@@ -48,11 +48,12 @@ header, nav {
 #footer {
   background-color: #444;
   color: #aaa;
-  font-size: 8pt;
+  font-size: 0.8em;
   letter-spacing: 1px;
   padding: 10px 0px 10px 0px;
   text-align: center;
   text-transform: uppercase;
+  justify-content: center;
 }
 /* ====================== Navigation ====================== */
 nav {
@@ -157,7 +158,7 @@ nav h1 a {
   background-color: #f3f3f3;
   list-style: outside none none;
   margin: 0;
-  padding: 25px 0 60px;
+  padding: 25px 0 10px;
   text-align: center;
   justify-content: space-evenly;
 }
