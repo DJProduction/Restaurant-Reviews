@@ -41,10 +41,16 @@
     <!-- Beginning restaurant -->
     <section id="restaurant-container">
       <h1 id="restaurant-name"></h1>
-      <picture id="restaurant-img"></picture>
-      <p id="restaurant-cuisine"></p>
-      <p id="restaurant-address"></p>
-      <table id="restaurant-hours"></table>
+      <!-- Container used to handle larger screens easier -->
+      <div id="picture-cuisine-container">
+        <picture id="restaurant-img"></picture>
+        <p id="restaurant-cuisine"></p>
+      </div>
+      <!-- Container used to handle larger screens easier -->
+      <div id="address-hours-container">
+        <h3 id="restaurant-address"></h3>
+        <table id="restaurant-hours"></table>
+      </div>
     </section>
     <!-- end restaurant -->
     <!-- Beginning reviews -->

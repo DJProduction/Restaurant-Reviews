@@ -199,7 +199,7 @@ createRestaurantHTML = (restaurant) => {
   <img class='restaurant-img' src="${DBHelper.imageUrlForRestaurant(restaurant)}">
   </picture>
 
-  <h1>${restaurant.name}</h1>
+  <h2>${restaurant.name}</h2>
   <p>${restaurant.neighborhood}</p>
   <p>${restaurant.address}</p>
   <a href="${DBHelper.urlForRestaurant(restaurant)}">View Details</a>`
