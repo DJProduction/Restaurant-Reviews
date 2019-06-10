@@ -94,7 +94,7 @@ fillRestaurantHTML = (restaurant = self.restaurant) => {
   srcset="${DBHelper.imageSmallUrlForRestaurant(restaurant)}">
   <source media="(min-width: 769px)"
   srcset="${DBHelper.imageUrlForRestaurant(restaurant)}">
-  <img class='restaurant-img' src="${DBHelper.imageUrlForRestaurant(restaurant)}">
+  <img class='restaurant-img' src="${DBHelper.imageUrlForRestaurant(restaurant)}" alt="${name.innerHTML} Restuarant Picture">
   `;
 
   const cuisine = document.getElementById('restaurant-cuisine');

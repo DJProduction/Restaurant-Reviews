@@ -54,17 +54,17 @@ article, aside, canvas, details, figcaption, figure, footer, hgroup, menu, secti
   justify-content: center;
 }
 /* ====================== Navigation ====================== */
-nav {
+#title-container {
   width: 100%;
   height: 70px;
   background-color: #252831;
   text-align:center;
   justify-content: center;
 }
-nav h1 {
+#site-title {
   margin: auto;
 }
-nav h1 a {
+#site-title a {
   color: #fff;
   font-size: 1.1em;
   font-weight: 200;

@@ -196,10 +196,10 @@ createRestaurantHTML = (restaurant) => {
   srcset="${DBHelper.imageSmallUrlForRestaurant(restaurant)}">
   <source media="(min-width: 769px)"
   srcset="${DBHelper.imageUrlForRestaurant(restaurant)}">
-  <img class='restaurant-img' src="${DBHelper.imageUrlForRestaurant(restaurant)}">
+  <img class='restaurant-img' src="${DBHelper.imageUrlForRestaurant(restaurant)}" alt="${restaurant.name} Restuarant Picture">
   </picture>
 
-  <h2>${restaurant.name}</h2>
+  <h3>${restaurant.name}</h3>
   <p>${restaurant.neighborhood}</p>
   <p>${restaurant.address}</p>
   <a href="${DBHelper.urlForRestaurant(restaurant)}">View Details</a>`
