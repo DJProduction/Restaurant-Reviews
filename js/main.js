@@ -190,6 +190,7 @@ createRestaurantHTML = (restaurant) => {
 
   // Retrieves image depending on size of device
   // Then inserts rest of restaurant information
+  // Accessibilty also included for information on restaurants
   li.innerHTML =
     `<picture>
   <source media="(max-width: 768px)"
@@ -199,10 +200,16 @@ createRestaurantHTML = (restaurant) => {
   <img class='restaurant-img' src="${DBHelper.imageUrlForRestaurant(restaurant)}" alt="${restaurant.name} Restuarant Picture">
   </picture>
 
-  <h3>${restaurant.name}</h3>
-  <p>${restaurant.neighborhood}</p>
-  <p>${restaurant.address}</p>
-  <a href="${DBHelper.urlForRestaurant(restaurant)}">View Details</a>`
+  <h3 tabindex="0"
+  role="text"
+  aria-label="Restaurant name ${restaurant.name}">${restaurant.name}</h3>
+  <p tabindex="0"
+  role="text"
+  aria-label="Restaurant neighborhood ${restaurant.neighborhood}">${restaurant.neighborhood}</p>
+  <p tabindex="0"
+  role="text"
+  aria-label="Restaurant address ${restaurant.address}">${restaurant.address}</p>
+  <a href="${DBHelper.urlForRestaurant(restaurant)}" role="link" aria-label="View details on restaurant">View Details</a>`
 
   return li
 }

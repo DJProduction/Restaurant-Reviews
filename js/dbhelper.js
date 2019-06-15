@@ -171,7 +171,8 @@ class DBHelper {
       {
         title: restaurant.name,
         alt: restaurant.name,
-        url: DBHelper.urlForRestaurant(restaurant)
+        url: DBHelper.urlForRestaurant(restaurant),
+        keyboard: true
       })
     marker.addTo(newMap);
     return marker;
