@@ -78,12 +78,18 @@ fetchRestaurantFromURL = (callback) => {
 
 /**
  * Create restaurant HTML and add it to the webpage
+ * Screen Reader Accessible
  */
 fillRestaurantHTML = (restaurant = self.restaurant) => {
   const name = document.getElementById('restaurant-name');
+  name.setAttribute("tabindex", "0");
+  name.setAttribute("role", "heading");
   name.innerHTML = restaurant.name;
 
   const address = document.getElementById('restaurant-address');
+  address.setAttribute("tabindex", "0");
+  address.setAttribute("role", "text");
+  address.setAttribute("aria-label", `Address information ${restaurant.address}`);
   address.innerHTML = restaurant.address;
 
   const picture = document.getElementById('restaurant-img');
@@ -94,7 +100,7 @@ fillRestaurantHTML = (restaurant = self.restaurant) => {
   srcset="${DBHelper.imageSmallUrlForRestaurant(restaurant)}">
   <source media="(min-width: 769px)"
   srcset="${DBHelper.imageUrlForRestaurant(restaurant)}">
-  <img class='restaurant-img' src="${DBHelper.imageUrlForRestaurant(restaurant)}" alt="${name.innerHTML} Restuarant Picture">
+  <img class='restaurant-img' src="${DBHelper.imageUrlForRestaurant(restaurant)}" alt="${name.innerHTML} Restuarant Picture" tabindex="0" role="img">
   `;
 
   const cuisine = document.getElementById('restaurant-cuisine');
@@ -111,6 +117,7 @@ fillRestaurantHTML = (restaurant = self.restaurant) => {
 
 /**
  * Create restaurant operating hours HTML table and add it to the webpage.
+ * Screen Reader Accessible
  */
 fillRestaurantHoursHTML = (operatingHours = self.restaurant.operating_hours) => {
   const hours = document.getElementById('restaurant-hours');
@@ -119,10 +126,14 @@ fillRestaurantHoursHTML = (operatingHours = self.restaurant.operating_hours) => 
 
     const day = document.createElement('td');
     day.innerHTML = key;
+    day.setAttribute("tabindex", "0");
+    day.setAttribute("role", "text");
     row.appendChild(day);
 
     const time = document.createElement('td');
     time.innerHTML = operatingHours[key];
+    time.setAttribute("tabindex", "0");
+    time.setAttribute("role", "text");
     row.appendChild(time);
 
     hours.appendChild(row);
@@ -131,11 +142,13 @@ fillRestaurantHoursHTML = (operatingHours = self.restaurant.operating_hours) => 
 
 /**
  * Create all reviews HTML and add them to the webpage.
+ * Screen Reader Accessible
  */
 fillReviewsHTML = (reviews = self.restaurant.reviews) => {
   const container = document.getElementById('reviews-container');
-  const title = document.createElement('h2');
+  const title = document.createElement('h3');
   title.innerHTML = 'Reviews';
+  title.setAttribute("tabindex", "0");
   container.appendChild(title);
 
   if (!reviews) {
@@ -156,22 +169,16 @@ fillReviewsHTML = (reviews = self.restaurant.reviews) => {
  */
 createReviewHTML = (review) => {
   const li = document.createElement('li');
-  const name = document.createElement('p');
-  name.innerHTML = review.name;
-  li.appendChild(name);
-
-  const date = document.createElement('p');
-  date.innerHTML = review.date;
-  li.appendChild(date);
-
-  const rating = document.createElement('p');
-  rating.innerHTML = `Rating: ${review.rating}`;
-  li.appendChild(rating);
-
-  const comments = document.createElement('p');
-  comments.innerHTML = review.comments;
-  li.appendChild(comments);
-
+  /*
+   * Literal template to easily modify templates and add screen reader assistance
+   */
+  li.innerHTML =
+    `
+  <strong tabindex="0" role="text" aria-label="Reviewer's name: ${review.name}">${review.name}</strong>
+  <p tabindex="0" role="text" aria-label="Date of review: ${review.date}">${review.date}</p>
+  <p id="review-rating" tabindex="0" role="text">Rating: ${review.rating}</p>
+  <p tabindex="0" role="text" aria-label="Reviewer's comment: ${review.comments}">${review.comments}</p>
+  `
   return li;
 }
 
@@ -181,6 +188,10 @@ createReviewHTML = (review) => {
 fillBreadcrumb = (restaurant = self.restaurant) => {
   const breadcrumb = document.getElementById('breadcrumb');
   const li = document.createElement('li');
+  /*
+   * Ensure screen reader does not tab navigate to restaurant name
+  */
+  li.setAttribute("tabindex", "-1");
   li.innerHTML = restaurant.name;
   breadcrumb.appendChild(li);
 }

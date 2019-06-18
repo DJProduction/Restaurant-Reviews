@@ -21,11 +21,11 @@
     <!-- Beginning nav -->
     <nav>
       <div id="title-container">
-        <h1 id="site-title"><a href="/">Restaurant Reviews</a></h1>
+        <h1 id="site-title"><a tabindex="-1" href="/">Restaurant Reviews</a></h1>
       </div>
       <!-- Beginning breadcrumb -->
       <ul id="breadcrumb">
-        <li><a href="/">Home</a></li>
+        <li role="link" aria-label="Back to Restaurant Reviews Main Page"><a href="/">Home</a></li>
       </ul>
       <!-- End breadcrumb -->
     </nav>
@@ -37,7 +37,7 @@
   <main id="maincontent">
     <!-- Beginning map -->
     <section id="map-container">
-      <div id="map"></div>
+      <div id="map" tabindex="0" role="application" aria-label="Map with location of requested restaurant"></div>
     </section>
     <!-- End map -->
     <!-- Beginning restaurant -->
@@ -50,8 +50,8 @@
       </div>
       <!-- Container used to handle larger screens easier -->
       <div id="address-hours-container">
-        <h3 id="restaurant-address"></h3>
-        <table id="restaurant-hours"></table>
+        <strong id="restaurant-address"></strong>
+        <table id="restaurant-hours" tabindex="0" role="tablist" aria-label="Restaurant hours"></table>
       </div>
     </section>
     <!-- end restaurant -->
