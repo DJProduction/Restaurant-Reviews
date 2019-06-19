@@ -216,20 +216,23 @@ nav {
   font-weight: 300;
   letter-spacing: -1px;
   padding-bottom: 1pt;
+  padding-top: 1.5%;
   text-align: center;
 }
 #reviews-list {
   margin: 0;
   padding: 0;
+  display: flex;
+  flex-wrap: wrap;
 }
 #reviews-list li {
   background-color: #fff;
-    border: 2px solid #f3f3f3;
+  border: 2px solid #f3f3f3;
   display: block;
   list-style-type: none;
   margin: 0 0 30px;
   overflow: hidden;
-  padding: 0 0 20px;
+  padding: 1% 1% 20px;
   position: relative;
   width: 100%;
 }
@@ -238,8 +241,9 @@ nav {
   font-size: 1.2em;
 }
 #reviews-list li strong {
+  color: #3397DB;
   margin: 0 0 10px;
-  font-weight: 600;
+  font-weight: 500;
   font-size: 1.5em;
 }
 #restaurant-hours td {

@@ -68,7 +68,7 @@
     }
 
     #restaurant-name {
-        font-size: 2.2em;
+        font-size: 2.1em;
         margin: 25px 0 15px;
     }
 
@@ -102,10 +102,13 @@
     }
 
     #reviews-container h3 {
-        font-size: 2.5em;
+        font-size: 2.4em;
     }
     #reviews-list li p {
-        font-size: 1.3em
+        font-size: 1.4em
+    }
+    #reviews-list li strong {
+        font-size: 1.8em;
     }
 
 
@@ -113,10 +116,35 @@
 
 /******** Large devices (laptops/desktops, 992px and up) *********/
 @media only screen and (min-width: 992px) {
+    /* ====================== Restaurant Main Screen ====================== */
     /* ====================== Restaurant Listing ====================== */
     /*Three column views */
     #restaurants-list li {
         width: 28%;
+    }
+
+    /* ====================== Restaurant Details ====================== */
+    #restaurant-name {
+        font-size: 2.4em;
+    }
+    #restaurant-cuisine {
+        font-size: 1.5em;
+    }
+    #restaurant-address {
+        font-size: 2em;
+        text-align: left;
+    }
+    #restaurant-hours {
+        font-size: 1.4em;
+    }
+    #reviews-container h3 {
+        font-size: 2.6em;
+    }
+    #reviews-list li p {
+        font-size: 1.6em
+    }
+    #reviews-list li strong {
+        font-size: 2em;
     }
 }
 
