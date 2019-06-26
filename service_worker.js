@@ -1,26 +1,40 @@
 const CACHE_NAME = 'restuarant-cache-v1';
-// var urlsToCache = [
-//   '/'
+/*
+  1. Team member can uncomment and give the user the entire site cache if needed on first loaded.
+*/
+//let urlsToCache = [
+// '/',
 // '/css',
 // '/data',
 // '/img',
 // '/js',
-// '/sw',
-//   '../'
-// ];
+// '/sw'
+//];
+/*
+  2. Team member can give the user an empty cache that gets filled  with necessary files as the user navigates the site.
+*/
+let urlsToCache = [];
 
+/*
+  Whether given an empty array or list of urls this function will set the cache up during the install period.
+*/
 self.addEventListener('install', (event) => {
   console.log(`Service Worker: Installed`);
-  // // Perform install steps
-  // event.waitUntil(
-  //   caches.open(CACHE_NAME)
-  //     .then(function (cache) {
-  //       console.log('Opened cache');
-  //       return cache.addAll(urlsToCache);
-  //     })
-  // );
+  // Perform install steps
+  event.waitUntil(
+    caches.open(CACHE_NAME)
+      .then((cache) => {
+        console.log('Opened cache');
+        return cache.addAll(urlsToCache);
+      })
+  );
 });
 
+/*
+  When service worker is actovated.
+  Function checks for a new cache name from the series of availble caches pending.
+  When new cache is activated clears old cache and all of its contents.
+*/
 self.addEventListener('activate', (event) => {
   console.log(`Service Worker: Activated`);
   event.waitUntil(
@@ -37,6 +51,11 @@ self.addEventListener('activate', (event) => {
   );
 });
 
+/*
+  1: checks to make sure that the url fetched is not already in the cache. If so, then returns cached file contents without adding to cache.
+  2: fetches from the network and returns the response from the fetched url.
+  3: If (2) occurs, uses clone function to add the file to the cache for future use by the user if the connection is lost.
+*/
 self.addEventListener('fetch', (event) => {
   console.log(`Service Worker: Fetch`);
   event.respondWith(
