@@ -8,8 +8,15 @@ For the **Restaurant Reviews** project, A static webpage was convertewd into a r
 
 The static format of the site was not capable of changing to accomidate the various commonly sized displays. It barely displayed correctly on a desktop and became near impossible to navigate on mobile devices. Additionally, the site was not compatible with accessibility applications such as screen readers. Visitors are unable to access the site when their devices have poor or no internet connections.
 
-## Visit New Restaurant Reviews Site
-You can click on this link: [] to visit the site.
+## How to download and launch Restaurant Reviews Site
+1. To run on your computer simply click the **Clone or download** button on the top right.
+2. You can **Download to Desktop** or **Download as Zip** and the file will be download to your local Downloads folder.
+3. Unzip/Open the downloaded restaurant-reviews folder
+4. In this folder, start up a simple HTTP server to serve up the site files on your local computer. Python has some simple tools to do this, and you don't even need to know Python. For most people, it's already installed on your computer.
+
+    * In a terminal, check the version of Python you have: `python -V`. If you have Python 2.x, spin up the server with `python -m SimpleHTTPServer 8000` (or some other port, if port 8000 is already in use.) For Python 3.x, you can use `python3 -m http.server 8000`. If you don't have Python installed, navigate to Python's [website](https://www.python.org/) to download and install the software.
+   * Note -  For Windows systems, Python 3.x is installed as `python` by default. To start a Python 3.x server, you can simply enter `python -m http.server 8000`.
+5. With your server running, visit the site: `http://localhost:8000`
 
 ## Making A Responsive Site
 
@@ -157,16 +164,6 @@ When an site fetches the information from a url, the service worker can listen a
 1.  Check to make sure that the url fetched is not already in the cache. If so, then returns cached file contents without adding to cache.
 2. Fetches from the network and returns the response from the fetched url.
 3. If step **2** occurs, uses clone function to add the file to the cache for future use by the user if the connection is lost.
-
-### What do I do from here?
-
-1. In this folder, start up a simple HTTP server to serve up the site files on your local computer. Python has some simple tools to do this, and you don't even need to know Python. For most people, it's already installed on your computer.
-
-    * In a terminal, check the version of Python you have: `python -V`. If you have Python 2.x, spin up the server with `python -m SimpleHTTPServer 8000` (or some other port, if port 8000 is already in use.) For Python 3.x, you can use `python3 -m http.server 8000`. If you don't have Python installed, navigate to Python's [website](https://www.python.org/) to download and install the software.
-   * Note -  For Windows systems, Python 3.x is installed as `python` by default. To start a Python 3.x server, you can simply enter `python -m http.server 8000`.
-2. With your server running, visit the site: `http://localhost:8000`, and look around for a bit to see what the current experience looks like.
-3. Explore the provided code, and start making a plan to implement the required features in three areas: responsive design, accessibility and offline use.
-4. Write code to implement the updates to get this site on its way to being a mobile-ready website.
 
 ## Contributions: Leaflet.js and Mapbox
 
