@@ -169,7 +169,7 @@ createRestaurantHTML = (restaurant) => {
   srcset="${DBHelper.imageSmallUrlForRestaurant(restaurant)}">
   <source media="(min-width: 769px)"
   srcset="${DBHelper.imageUrlForRestaurant(restaurant)}">
-  <img class='restaurant-img' src="${DBHelper.imageUrlForRestaurant(restaurant)}" alt="${restaurant.name} Restuarant Picture">
+  <img class='restaurant-img' tabindex="0" src="${DBHelper.imageUrlForRestaurant(restaurant)}" alt="${restaurant.name} description ${restaurant.photo_description}">
   </picture>
 
   <h3 tabindex="0"
