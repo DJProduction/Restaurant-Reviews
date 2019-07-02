@@ -100,7 +100,7 @@ fillRestaurantHTML = (restaurant = self.restaurant) => {
   srcset="${DBHelper.imageSmallUrlForRestaurant(restaurant)}">
   <source media="(min-width: 769px)"
   srcset="${DBHelper.imageUrlForRestaurant(restaurant)}">
-  <img class='restaurant-img' src="${DBHelper.imageUrlForRestaurant(restaurant)}" alt="${name.innerHTML} Restuarant Picture" tabindex="0" role="img">
+  <img class='restaurant-img' src="${DBHelper.imageUrlForRestaurant(restaurant)}" alt="${name.innerHTML} description ${restaurant.photo_description}" tabindex="0" role="img">
   `;
 
   const cuisine = document.getElementById('restaurant-cuisine');
@@ -191,7 +191,10 @@ fillBreadcrumb = (restaurant = self.restaurant) => {
   /*
    * Ensure screen reader does not tab navigate to restaurant name
   */
-  li.setAttribute("tabindex", "-1");
+  li.setAttribute("tabindex", "0");
+  li.setAttribute("role", "text");
+  li.setAttribute("aria-current", "page");
+  li.setAttribute("aria-label", `${restaurant.name} current page`);
   li.innerHTML = restaurant.name;
   breadcrumb.appendChild(li);
 }
