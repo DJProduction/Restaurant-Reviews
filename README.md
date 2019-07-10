@@ -2,14 +2,14 @@
 ---
 ## Project Overview
 
-For the **Restaurant Reviews** project, A static webpage was convertewd into a responsive web application with additional robust features. The goal is to imporve the user experience to be comparible to a native application.
+For the **Restaurant Reviews** project, A static webpage was converted into a responsive web application with additional robust features. The goal is to imporve the user experience to be comparible to a native application.
 
 ## Initial Site Problems
 
 The static format of the site was not capable of changing to accomidate the various commonly sized displays. It barely displayed correctly on a desktop and became near impossible to navigate on mobile devices. Additionally, the site was not compatible with accessibility applications such as screen readers. Visitors are unable to access the site when their devices have poor or no internet connections.
 
 ## How to download and launch Restaurant Reviews Site
-1. To run on your computer simply click the **Clone or download** button on the top right.
+1. To run on your computer simply click the **Clone or Download** button on the top right.
 2. You can **Download to Desktop** or **Download as Zip** and the file will be download to your local Downloads folder.
 3. Unzip/Open the downloaded restaurant-reviews folder
 4. In this folder, start up a simple HTTP server to serve up the site files on your local computer. Python has some simple tools to do this, and you don't even need to know Python. For most people, it's already installed on your computer.
