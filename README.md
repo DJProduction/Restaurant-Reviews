@@ -2,11 +2,11 @@
 ---
 ## Project Overview
 
-For the **Restaurant Reviews** project, A static webpage was converted into a responsive web application with additional robust features. The goal is to imporve the user experience to be comparible to a native application.
+For the **Restaurant Reviews** project, A static webpage was converted into a responsive web application with additional robust features. The goal is to improve the user experience to be comparable to a native application with basic features.
 
 ## Initial Site Problems
 
-The static format of the site was not capable of changing to accomidate the various commonly sized displays. It barely displayed correctly on a desktop and became near impossible to navigate on mobile devices. Additionally, the site was not compatible with accessibility applications such as screen readers. Visitors are unable to access the site when their devices have poor or no internet connections.
+The static format of the site was not capable of changing to accommodate the various commonly sized displays. It barely displayed correctly on a desktop and became near impossible to navigate on mobile devices. Additionally, the site was not compatible with accessibility applications such as screen readers. Visitors are unable to access the site when their devices have poor or no internet connections.
 
 ## How to download and launch Restaurant Reviews Site
 1. To run on your computer simply click the **Clone or Download** button on the top right.
@@ -15,7 +15,7 @@ The static format of the site was not capable of changing to accomidate the vari
 4. In this folder, start up a simple HTTP server to serve up the site files on your local computer. Python has some simple tools to do this, and you don't even need to know Python. For most people, it's already installed on your computer.
 
     * In a terminal, check the version of Python you have: `python -V`. If you have Python 2.x, spin up the server with `python -m SimpleHTTPServer 8000` (or some other port, if port 8000 is already in use.) For Python 3.x, you can use `python3 -m http.server 8000`. If you don't have Python installed, navigate to Python's [website](https://www.python.org/) to download and install the software.
-   * Note -  For Windows systems, Python 3.x is installed as `python` by default. To start a Python 3.x server, you can simply enter `python -m http.server 8000`.
+   * Note - For Windows systems, Python 3.x is installed as `python` by default. To start a Python 3.x server, you can simply enter `python -m http.server 8000`.
 5. With your server running, visit the site: `http://localhost:8000`
 
 ## Making A Responsive Site
@@ -58,7 +58,7 @@ The majority of the content was centered with a few exceptions. Notice even the 
 ```
 
 ### Pictures/Images
-The picture tag was used to ensure proper sizing as well as assist with performance. Smartphones will properly hold the ratio of a larger image that is reduced in size. The reason perfomance was improved was because the resolution of images do not need to be sharp when displayed on a small smartphone screen. So a smaller resolution image will boost the overall loading speed of the page for smaller devices. Laptops and computers usually have access to faster wifi speeds which is acceptable to load larger resolutions.
+The picture tag was used to ensure proper sizing as well as assist with performance. Smartphones will properly hold the ratio of a larger image that is reduced in size. The reason performance was improved was because the resolution of images do not need to be sharp when displayed on a small smartphone screen. A smaller resolution image will boost the overall loading speed of the page for smaller devices. Laptops and computers usually have access to faster wifi speeds which is acceptable to load larger resolutions.
 ```
 <picture>
   <source media="(max-width: 768px)"  srcset="${DBHelper.imageSmallUrlForRestaurant(restaurant)}"> <source media="(min-width: 769px)"
@@ -89,7 +89,7 @@ You can visit on desktop or mobile and notice the different layouts depending on
 The screen reader used for the majority of accessibility testing was [ChromeVox](https://chrome.google.com/webstore/detail/chromevox/kgejglhpjiefppelpmljglcjbhoiplfn?hl=en).
 
 ### Semantic Tags and Tabindex
-The main structure element tags were changed to show some order for the screen reader applications as the user navigates the site. For example tags such as headers `<h1>, <h2>, <h3> ...` were reorganized for important elements of the pages.
+The main structure element tags were changed to show some order for the screen reader applications as the user navigates the site. For example, tags such as headers `<h1>, <h2>, <h3> ...` were reorganized for important elements of the pages.
 
 In order for the user to understand the structure of the site the tabindex property was used on elements that may have **not** been focused on by the screen reader.
 ```
@@ -103,7 +103,7 @@ To ensure that the user has an idea of significant images the `alt` image proper
 ```
 
 ### LeafMap Accessibility
-Users of screen readers should still be able to use the map if they want to learn about different restaurants. The screen reader should still be able to tell the user which restuarant is markered on the map depending on their filter options. Once the desired restaurant is selected, the user should be able to navigate straight to the restaurant details page for that restaurant.
+Users of screen readers should still be able to use the map if they want to learn about different restaurants. The screen reader should still be able to tell the user which restaurant is marked on the map depending on their filter options. Once the desired restaurant is selected, the user should be able to navigate straight to the restaurant details page for that restaurant.
 In order to accomplish these things an `alt` and `keyboard` properties were found in the LeafMap documentation and added to the [dbhelper.js](https://github.com/DJProduction/Restaurant-Reviews/blob/master/js/dbhelper.js).
 ```
   static mapMarkerForRestaurant(restaurant, map) {
@@ -125,7 +125,7 @@ For example:
 role="combobox" name="neighborhoods" onchange="updateRestaurants()">
 <option value="all">All Neighborhoods</option>
 ```
-Based on standard HTML5 rules the screen reader can properly explain this is a "combobox named neighborhoods" to a user. Then the applicationwould read each option to the user.
+Based on standard HTML5 rules the screen reader can properly explain this is a "combobox named neighborhoods" to a user. Then the application will read each option to the user.
 
 Otherwise, important elements were explained with aria properties. For example this is a literal template for the reviewers' posts.
 ```
@@ -156,7 +156,7 @@ const CACHE_NAME = 'restuarant-cache-v1';
 ```
 let urlsToCache = [];
 ```
-3. Listening for the "install" event which is fired by the service worker to handle the initial structure of the service worker. For example the array of urls can be inserted into an 'open' cache by reference to the name.
+3. Listening for the "install" event which is fired by the service worker to handle the initial structure of the service worker. For example, the array of urls can be inserted into an 'open' cache by reference to the name.
 4. Listening for the "activate" event which is fired by the service worker for possibly clearing old caches and replacing with new caches that may be waiting to be updated.
 
 ### Caching Files On Visited Pages
